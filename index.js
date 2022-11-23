@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const {
   register,
@@ -19,6 +20,7 @@ const PORT = process.env.PORT || 5555;
 connectToDataBase();
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors());
 
 app.post("/register", register);
 app.post("/login", login);
