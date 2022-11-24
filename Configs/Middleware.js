@@ -9,7 +9,7 @@ exports.isAuthenticated = async (req, res, next) => {
       return res.status(401).json({
         success: false,
         msg: "please login first",
-        request: token,
+        request: "token",
       });
     }
 
