@@ -87,6 +87,7 @@ exports.login = async (req, res) => {
       .json({
         success: true,
         msg: "Login Successfully",
+        token,
       });
   } catch (error) {
     res.status(500).json({
@@ -148,12 +149,10 @@ exports.forgotPassword = async (req, res) => {
 
     await user.save();
 
-    res
-      .status(200)
-      .json({
-        success: true,
-        msg: "Password Updated Successfully Please Login",
-      });
+    res.status(200).json({
+      success: true,
+      msg: "Password Updated Successfully Please Login",
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
