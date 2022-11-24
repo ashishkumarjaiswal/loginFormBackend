@@ -3,18 +3,19 @@ const jwt = require("jsonwebtoken");
 
 exports.isAuthenticated = async (req, res, next) => {
   try {
-    // const { token } = req.cookies;
+    const { token } = req.cookies;
 
-    // if (!token) {
-    //   return res.status(401).json({
-    //     success: false,
-    //     msg: "please login first",
-    //   });
-    // }
+    if (!token) {
+      return res.status(401).json({
+        success: false,
+        msg: "please login first",
+        token,
+      });
+    }
 
-    // const decoded = jwt.verify(token, "nameisenough");
+    const decoded = jwt.verify(token, "nameisenough");
 
-    // req.user = await User.findById(decoded._id);
+    req.user = await User.findById(decoded._id);
 
     next();
   } catch (error) {
