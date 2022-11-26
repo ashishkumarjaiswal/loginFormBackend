@@ -26,7 +26,7 @@ app.post("/register", register);
 app.post("/login", login);
 app.post("/updateProfile", isAuthenticated, updateProfile);
 app.post("/forgotPassword", forgotPassword);
-app.get("/getUserData", isAuthenticated, getUserData);
+app.post("/getUserData", isAuthenticated, getUserData);
 app.get("/logout", logout);
 // app.get("/isAuth", isAuthenticated, isAuth);
 
