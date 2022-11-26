@@ -28,7 +28,7 @@ app.post("/updateProfile", isAuthenticated, updateProfile);
 app.post("/forgotPassword", forgotPassword);
 app.get("/getUserData", isAuthenticated, getUserData);
 app.get("/logout", logout);
-app.get("/isAuth", isAuthenticated, isAuth);
+// app.get("/isAuth", isAuthenticated, isAuth);
 
 app.listen(PORT, () => {
   console.log(`app is listen on port ${PORT}`);

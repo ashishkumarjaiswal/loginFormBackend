@@ -178,15 +178,15 @@ exports.logout = (req, res) => {
   }
 };
 
-exports.isAuth = (req, res) => {
-  try {
-    res.status(200).json({
-      success: true,
-    });
-  } catch (error) {
-    res.status(500).json({
-      success: false,
-      msg: error.message,
-    });
-  }
-};
+// exports.isAuth = (req, res) => {
+//   try {
+//     res.status(200).json({
+//       success: true,
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       success: false,
+//       msg: error.message,
+//     });
+//   }
+// };
